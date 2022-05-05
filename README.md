@@ -1,38 +1,27 @@
-# create-svelte
+# File upload bug
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This repo is to demonstrate a bug that occurs when dynamically adding files to the `static` folder when using `@sveltejs/adapter-node`.
 
-## Creating a project
+## Reproduction
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+Clone this repo and build it.
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+Next, navigate to the `build` directory and run the `index.js`
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+cd build && node index.js
+```
+
+Notice how after uploading files and clicking the links, a `404` is received, _even though_ the file is within the `static` folder.
+
+## Notes
+
+This seems to _only_ be an issue when running in production. Running in development works just fine
+
+```bash
+npm run dev # or preview <-- Works just fine
+```
