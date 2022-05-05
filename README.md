@@ -1,5 +1,7 @@
 # File upload bug
 
+https://github.com/sveltejs/kit/issues/4832
+
 This repo is to demonstrate a bug that occurs when dynamically adding files to the `static` folder when using `@sveltejs/adapter-node`.
 
 ## Reproduction
