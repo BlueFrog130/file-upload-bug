@@ -18,6 +18,11 @@ cd build && node index.js
 
 Notice how after uploading files and clicking the links, a `404` is received, _even though_ the file is within the `static` folder.
 
+![choose](.github/choose.png)
+![submitted](.github/submitted.png)
+![file](.github/file.png)
+![404](.github/404.png)
+
 ## Notes
 
 This seems to _only_ be an issue when running in production. Running in development works just fine
